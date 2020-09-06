@@ -23,22 +23,24 @@ OBJ=$(SRC:.c=.o)
 
 RM=rm -f
 
-LIBFT= ./libft/libft.a 
+LIBFT= ./libft/libft.a
 
 $(NAME):
 		make -C ./libft/
-		$(CC) $(CFLAGS) -c $(SRC)
-		$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
+		$(CC) $(CFLAGS) -o $(NAME) $(SRC) $(LIBFT)
+
+		#$(CC) $(CFLAGS) -c $(SRC)
+		#$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
 
 all:$(NAME)
 
 clean:
 	$(RM) $(OBJ)
-	make clean -C ./libft/
+	make -C ./libft/ clean
 
 fclean: clean
 		@rm -f $(NAME)
-		@make fclean -C ./libft/
+		@make -C ./libft/ fclean
 
 re: fclean all
 

@@ -102,10 +102,8 @@ char		*remove_nl(char *tetri, int *check_newline, char **tab)
 void		free_afterload(char **tbl)
 {
 	size_t	i;
-	int		u;
 
 	i = -1;
-	u = 0;
 	if (tbl == 0 || *tbl == 0)
 		return ;
 	while (tbl[++i])

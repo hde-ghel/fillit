@@ -81,12 +81,12 @@ t_bool	is_safe(char **map, char *tetri, int col, int row)
 		if (i > 3 && ++row && !(i = 0))
 			col = init_col;
 		if (*tetri == '.' && ++i && ++col)
-			;
+			NULL;
 		if (((map[row][col] != EMPTY) && map[row][col] && *tetri != EMPTY) ||
 			(!map[row][col] && *tetri != EMPTY))
 			return (false);
 		if (map[row][col] == EMPTY && *tetri != EMPTY && ++col && ++i)
-			;
+			NULL;
 		tetri++;
 	}
 	return (true);

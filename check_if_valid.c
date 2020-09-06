@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "./fillit.h"
 
 static int	is_valid_char(char c)
 {
